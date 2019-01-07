@@ -128,13 +128,16 @@ export default class UnityContent {
   public send(
     gameObjectName: string,
     methodName: string,
-    parameter?: any
+    parameter1?: any,
+    parameter2?: any
   ): void {
     if (this.unityInstance != null) {
-      if (typeof parameter === "undefined") {
+      if (typeof parameter1 === "undefined") {
         this.unityInstance.SendMessage(gameObjectName, methodName);
+      } else if (typeof parameter2 === "undefined") {
+        this.unityInstance.SendMessage(gameObjectName, methodName, parameter1);
       } else {
-        this.unityInstance.SendMessage(gameObjectName, methodName, parameter);
+        this.unityInstance.SendMessage(gameObjectName, methodName, parameter1, parameter2);
       }
     }
   }

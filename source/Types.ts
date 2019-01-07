@@ -29,7 +29,8 @@ declare class UnityInstance {
   public SendMessage(
     gameObjectName: string,
     methodName: string,
-    parameter?: any
+    parameter1?: any,
+    parameter2?: any
   ): void;
 
   /**
